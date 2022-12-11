@@ -1,7 +1,7 @@
 # Database
 Discord bot database
 
-# Initialization
+## Initialization
 To start the datebase, type command:
 ```
 $ docker-compose up -d
@@ -21,6 +21,15 @@ From here, enter `\password` to change the current password for user admin. Of
 course, share the new password with your coworkers ;) . At the end, type `exit`
 (works both for leaving psql and shell).
 
-# Executing queries
-By the time of not having the database admin cointainer, use PSQL client for
+## Finding out the address of the server
+
+Use this command to find out what the **local** IP address of the Postgres database
+is.
+
+```
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' postgresovisco
+```
+
+## Executing queries
+By the time of not having the database admin container, use PSQL client for
 executing queries.
