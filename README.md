@@ -1,35 +1,30 @@
-# Database
-Discord bot database
+# pgadmin4 and Postgres server
 
-## Initialization
-To start the datebase, type command:
+To launch docker containers with Postgres and pgadmin4 run command:
+```bash
+docker-compose up -d
 ```
-$ docker-compose up -d
+Then open your browser and go to the url:
 ```
-If there is no postgresql container, docker will automatically create new
-container named `postgresovisco`, otherwise local container will run.
+localhost:5555
+```
+E-mail:
+``` 
+esovisco@pg.edu.pl 
+```
+Password
+```
+1qazaq1
+ ```
+ After succesfull logging click Servers-> Register -> Server
 
-At start, change default password. Go into container's shell by command:
-```
-$ docker exec -it postgresovisco bash
-```
-and enter the PSQL client by typing (`admin` is the main database user):
-```
-psql -U admin
-```
-From here, enter `\password` to change the current password for user admin. Of
-course, share the new password with your coworkers ;) . At the end, type `exit`
-(works both for leaving psql and shell).
+ ![image](https://cdn.discordapp.com/attachments/1044342494143451166/1053010730733027468/image.png)
 
-## Finding out the address of the server
+Give the name of the  database.
+To connect client with database you have to know the ip of database.
+You can find it typing docker inspect (id of docker conatiner) in the Terminal, as a field IPAddress. Go to connection tab and insetr
+information presented below. Password is **admin**.
 
-Use this command to find out what the **local** IP address of the Postgres database
-is.
+![image](https://cdn.discordapp.com/attachments/1044342494143451166/1053012244507664515/image.png)
 
-```
-docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' postgresovisco
-```
-
-## Executing queries
-By the time of not having the database admin container, use PSQL client for
-executing queries.
+Click Save and you should be connected to postgres database.

@@ -1,12 +1,31 @@
 version: '3.1'
 
 services:
+
   db:
-    container_name: postgresovisco
-    image: postgres:15.1
+    container_name: postgres
+    image: postgres
     restart: always
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
-      POSTGRES_HOST_AUTH_METHOD: scram-sha-256
+      POSTGRES_DB: discord_bot
+    ports: 
+      - "5432:5432"
 
+  pgadmin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: esovisco@pg.edu.pl
+      PGADMIN_DEFAULT_PASSWORD: 1qazaq1
+    ports:
+      - "5555:80"
+    volumes:
+      - pgadmin-volume:/var/lib/pgadmin
+#       - ./servers.json:/pgadmin4/servers.json
+
+volumes:
+  pgadmin-volume:
+#   postgres-volume:
