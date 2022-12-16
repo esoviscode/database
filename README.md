@@ -6,7 +6,7 @@ docker-compose up -d
 ```
 Then open your browser and go to the url:
 ```
-localhost:5555
+http://localhost:5555
 ```
 E-mail:
 ``` 
