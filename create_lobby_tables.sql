@@ -6,7 +6,7 @@ CREATE TABLE public."Game"
     id_campaign bigint,
     game_state character varying,
     PRIMARY KEY (id_game),
-    CONSTRAINT game_state_enum CHECK (game_state in ('LOBBY', 'STARTING', 'ACTIVE', 'INACTIVE'))
+    CONSTRAINT game_state_enum CHECK (game_state in ('LOBBY', 'STARTING', 'ACTIVE', 'INACTIVE', 'FINISHED'))
 );
 
 ALTER TABLE IF EXISTS public."Game"
@@ -26,3 +26,4 @@ CREATE TABLE public."User"
 
 ALTER TABLE IF EXISTS public."User"
     OWNER to admin;
+    
