@@ -22,7 +22,7 @@ Password
 
 Give the name of the  database.
 To connect client with database you have to know the ip of database.
-You can find it by typing `docker inspect <id of docker container>` in the 
+You can find it by typing `docker inspect  -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' postgresovisco`
 Terminal, as a field IPAddress. Go to connection tab and insert
 information presented below. Password is **admin**.
 ![image](https://cdn.discordapp.com/attachments/1044342494143451166/1053012244507664515/image.png)
