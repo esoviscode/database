@@ -1,6 +1,6 @@
 CREATE TABLE public."Game"
 (
-    id_game bigint NOT NULL,
+    id_game serial NOT NULL,
     password character varying,
     id_host bigint,
     id_campaign bigint,
@@ -14,8 +14,8 @@ ALTER TABLE IF EXISTS public."Game"
 	
 CREATE TABLE public."User"
 (
-    id_user bigint NOT NULL,
-    id_game bigint,
+    id_user serial NOT NULL,
+    id_game serial,
     discord_id bigint,
     PRIMARY KEY (id_user),
     FOREIGN KEY (id_game)
