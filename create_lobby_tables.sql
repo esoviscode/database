@@ -1,7 +1,7 @@
 CREATE TABLE public."Game"
 (
     id_game serial NOT NULL,
-    password character varying,
+    token character varying,
     id_host bigint,
     id_campaign bigint,
     game_state character varying,
