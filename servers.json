@@ -2,13 +2,13 @@
     "Servers": {
         "pgdatabase": {
             "Name": "postgresovisco",
-            "Group": "Esovisco",
+            "Group": "Servers",
             "Port": 5432,
             "Username": "admin",
             "Password": "admin",
-            "Host": "172.19.0.2",
+            "Host": "postgresovisco.database_default",
             "SSLMode": "prefer",
-            "MaintenanceDB": "postgresovisco"
+            "MaintenanceDB": "postgres"
         }
     }
 }
