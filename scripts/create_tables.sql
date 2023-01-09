@@ -257,3 +257,4 @@ CREATE TABLE public."Player"
 
 ALTER TABLE IF EXISTS public."Player"
     OWNER to admin;
+    
