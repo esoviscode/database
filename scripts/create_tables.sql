@@ -129,6 +129,7 @@ CREATE TABLE public."Item"
     perception INTEGER,
     action_points INTEGER,
     effect VARCHAR,
+    base_price INTEGER,
     PRIMARY KEY (id_item)
 );
 
