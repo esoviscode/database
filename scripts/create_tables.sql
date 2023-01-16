@@ -240,7 +240,7 @@ CREATE TABLE public."Player"
     alignment VARCHAR,
     backstory VARCHAR,
     id_equipment BIGINT,
-    id_entity BIGINT,
+    id_creature BIGINT,
     PRIMARY KEY (id_player),
     CONSTRAINT id_user FOREIGN KEY (id_user)
         REFERENCES public."User" (id_user) MATCH SIMPLE
@@ -250,8 +250,8 @@ CREATE TABLE public."Player"
         REFERENCES public."Equipment" (id_equipment) MATCH SIMPLE
         ON UPDATE SET NULL
         ON DELETE SET NULL,
-    CONSTRAINT id_entity FOREIGN KEY (id_entity)
-        REFERENCES public."Entity" (id_entity) MATCH SIMPLE
+    CONSTRAINT id_creature FOREIGN KEY (id_creature)
+        REFERENCES public."Creature" (id_creature) MATCH SIMPLE
         ON UPDATE CASCADE
         ON DELETE CASCADE
 );
