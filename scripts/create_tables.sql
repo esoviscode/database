@@ -32,12 +32,9 @@ ALTER TABLE IF EXISTS public."User"
 CREATE TABLE public."Event"
 (
     id_event BIGSERIAL NOT NULL,
-    x INTEGER,
-    y INTEGER,
-    range INTEGER,
     status VARCHAR,
-    content VARCHAR,
     id_game BIGINT,
+    json_id BIGINT,
     PRIMARY KEY (id_event),
     CONSTRAINT id_game FOREIGN KEY (id_game)
         REFERENCES public."Game" (id_game) MATCH SIMPLE
@@ -58,6 +55,7 @@ CREATE TABLE public."Entity"
     y INTEGER,
     sprite VARCHAR,
     id_game BIGINT,
+    description VARCHAR,
     PRIMARY KEY (id_entity),
     CONSTRAINT id_game FOREIGN KEY (id_game)
         REFERENCES public."Game" (id_game) MATCH SIMPLE
@@ -101,6 +99,7 @@ CREATE TABLE public."Dialog"
     id_listener BIGINT,
     content VARCHAR,
     status VARCHAR,
+    json_id BIGINT,
     PRIMARY KEY (id_dialog),
     CONSTRAINT id_speaker FOREIGN KEY (id_speaker)
         REFERENCES public."Entity" (id_entity) MATCH SIMPLE
@@ -130,6 +129,7 @@ CREATE TABLE public."Item"
     action_points INTEGER,
     effect VARCHAR,
     base_price INTEGER,
+    description VARCHAR,
     PRIMARY KEY (id_item)
 );
 
