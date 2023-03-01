@@ -6,7 +6,7 @@
             "Port": 5432,
             "Username": "admin",
             "Password": "admin",
-            "Host": "postgresovisco.database_default",
+            "Host": "postgresovisco",
             "SSLMode": "prefer",
             "MaintenanceDB": "postgres"
         }
