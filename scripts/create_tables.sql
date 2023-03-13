@@ -53,7 +53,6 @@ CREATE TABLE public."Entity"
     name VARCHAR,
     x INTEGER,
     y INTEGER,
-    sprite VARCHAR,
     id_game BIGINT,
     description VARCHAR,
     PRIMARY KEY (id_entity),
@@ -81,6 +80,7 @@ CREATE TABLE public."Creature"
     action_points INTEGER,
     money INTEGER,
     id_entity BIGINT,
+    experience INTEGER,
     PRIMARY KEY (id_creature),
     CONSTRAINT base_entity FOREIGN KEY (id_entity)
         REFERENCES public."Entity" (id_entity) MATCH SIMPLE
