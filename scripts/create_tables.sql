@@ -240,6 +240,8 @@ CREATE TABLE public."Player"
     alignment VARCHAR,
     backstory VARCHAR,
     id_equipment BIGINT,
+    race VARCHAR,
+    class VARCHAR,
     id_creature BIGINT NOT NULL,
     PRIMARY KEY (id_player),
     CONSTRAINT id_user FOREIGN KEY (id_user)
@@ -253,7 +255,9 @@ CREATE TABLE public."Player"
     CONSTRAINT id_creature FOREIGN KEY (id_creature)
         REFERENCES public."Creature" (id_creature) MATCH SIMPLE
         ON UPDATE CASCADE
-        ON DELETE CASCADE
+        ON DELETE CASCADE,
+    CONSTRAINT race_enum CHECK (race in ('HUMAN', 'ELF', 'DWARF')),
+    CONSTRAINT class_enum CHECK (class in ('WARRIOR', 'MAGE', 'RANGER'))
 );
 
 ALTER TABLE IF EXISTS public."Player"
