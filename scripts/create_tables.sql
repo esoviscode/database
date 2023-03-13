@@ -79,7 +79,7 @@ CREATE TABLE public."Creature"
     initiative INTEGER,
     action_points INTEGER,
     money INTEGER,
-    id_entity BIGINT,
+    id_entity BIGINT NOT NULL,
     experience INTEGER,
     PRIMARY KEY (id_creature),
     CONSTRAINT base_entity FOREIGN KEY (id_entity)
@@ -240,7 +240,7 @@ CREATE TABLE public."Player"
     alignment VARCHAR,
     backstory VARCHAR,
     id_equipment BIGINT,
-    id_creature BIGINT,
+    id_creature BIGINT NOT NULL,
     PRIMARY KEY (id_player),
     CONSTRAINT id_user FOREIGN KEY (id_user)
         REFERENCES public."User" (id_user) MATCH SIMPLE
