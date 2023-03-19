@@ -206,11 +206,10 @@ ALTER TABLE IF EXISTS public."Dialog"
 	
 CREATE TABLE public."Player_Item"
 (
-    id_player_item BIGSERIAL NOT NULL,
-    id_player BIGINT,
-    id_item BIGINT,
+    id_player BIGINT NOT NULL,
+    id_item BIGINT NOT NULL,
     amount INTEGER,
-    PRIMARY KEY (id_player_item),
+    PRIMARY KEY (id_player, id_item),
     CONSTRAINT id_player FOREIGN KEY (id_player)
         REFERENCES public."Player" (id_player) MATCH SIMPLE
         ON UPDATE CASCADE
@@ -238,10 +237,9 @@ ALTER TABLE IF EXISTS public."Skill"
 	
 CREATE TABLE public."Entity_Skill"
 (
-    id_entity_skill BIGSERIAL NOT NULL,
-    id_entity BIGINT,
-    id_skill BIGINT,
-    PRIMARY KEY (id_entity_skill),
+    id_entity BIGINT NOT NULL,
+    id_skill BIGINT NOT NULL,
+    PRIMARY KEY (id_entity, id_skill),
     CONSTRAINT id_entity FOREIGN KEY (id_entity)
         REFERENCES public."Entity" (id_entity) MATCH SIMPLE
         ON UPDATE CASCADE
