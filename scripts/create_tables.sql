@@ -101,8 +101,8 @@ CREATE TABLE public."Equipment"
 
 ALTER TABLE IF EXISTS public."Equipment"
     OWNER to admin;
-	
-	
+
+
 CREATE TABLE public."Entity"
 (
     id_entity BIGSERIAL NOT NULL,
@@ -120,7 +120,7 @@ CREATE TABLE public."Entity"
 
 ALTER TABLE IF EXISTS public."Entity"
     OWNER to admin;
-	
+
 
 CREATE TABLE public."Creature"
 (
@@ -161,9 +161,8 @@ CREATE TABLE public."Player"
     id_user BIGINT,
     alignment VARCHAR,
     backstory VARCHAR,
-    race VARCHAR,
-    
     id_creature BIGINT NOT NULL,
+    race VARCHAR,
     PRIMARY KEY (id_player),
     CONSTRAINT id_user FOREIGN KEY (id_user)
         REFERENCES public."User" (id_user) MATCH SIMPLE
@@ -178,8 +177,8 @@ CREATE TABLE public."Player"
 
 ALTER TABLE IF EXISTS public."Player"
     OWNER to admin;
-	
-	
+
+
 CREATE TABLE public."Dialog"
 (
     id_dialog BIGSERIAL NOT NULL,
@@ -202,8 +201,8 @@ CREATE TABLE public."Dialog"
 
 ALTER TABLE IF EXISTS public."Dialog"
     OWNER to admin;
-	
-	
+
+
 CREATE TABLE public."Player_Item"
 (
     id_player BIGINT NOT NULL,
@@ -222,8 +221,8 @@ CREATE TABLE public."Player_Item"
 
 ALTER TABLE IF EXISTS public."Player_Item"
     OWNER to admin;
-	
-	
+
+
 CREATE TABLE public."Skill"
 (
     id_skill BIGSERIAL NOT NULL,
@@ -232,9 +231,9 @@ CREATE TABLE public."Skill"
 );
 
 ALTER TABLE IF EXISTS public."Skill"
-    OWNER to admin;	
-	
-	
+    OWNER to admin;
+
+
 CREATE TABLE public."Entity_Skill"
 (
     id_entity BIGINT NOT NULL,
@@ -252,4 +251,3 @@ CREATE TABLE public."Entity_Skill"
 
 ALTER TABLE IF EXISTS public."Entity_Skill"
     OWNER to admin;
-    
