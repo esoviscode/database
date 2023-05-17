@@ -5,7 +5,7 @@ DROP TABLE public."Entity" CASCADE;
 DROP TABLE public."Creature" CASCADE;
 DROP TABLE public."Dialog" CASCADE;
 DROP TABLE public."Item" CASCADE;
-DROP TABLE public."Creature_Item" CASCADE;
+DROP TABLE public."Player_Item" CASCADE;
 DROP TABLE public."Skill" CASCADE;
 DROP TABLE public."Entity_Skill" CASCADE;
 DROP TABLE public."Equipment" CASCADE;
