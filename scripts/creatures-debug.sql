@@ -1,11 +1,12 @@
- SELECT "Entity".id_entity,
+SELECT "Entity".id_entity,
     "Entity".name,
     "Entity".x,
     "Entity".y,
     "Entity".id_game,
     "Entity".description,
     "Creature".action_points,
-    "Creature"."HP"
+    "Creature"."HP",
+	"Creature".id_creature
    FROM "Entity"
      LEFT JOIN "Creature" ON "Entity".id_entity = "Creature".id_entity
      LEFT JOIN "Game" ON "Game".id_game = "Entity".id_game
@@ -13,5 +14,5 @@
            FROM "Game" "Game_1"
           ORDER BY "Game_1".id_game DESC
          LIMIT 1))
-  ORDER BY "Entity".id_game DESC
+  ORDER BY "Entity".id_entity ASC
  LIMIT 100;
